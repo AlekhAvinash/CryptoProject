@@ -45,3 +45,5 @@ def home():
 			out = 'Not a Prime :('
 		return render_template('index.html', text=out)
 	return render_template('index.html')
+
+app.run()
