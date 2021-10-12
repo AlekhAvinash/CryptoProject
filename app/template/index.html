@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+	</head>
+	<body>
+		<form name="input" method="post">
+			<label >Large Number:</label>
+			<input type="text" name="num" placeholder="Large Number">
+			<button type="submit">Check</button>
+		</form>
+		<div name="ouput">
+			{% if text %}
+			<h2>{{ text }}</h2>
+			{% endif %}
+		</div>
+	</body>
+</html>  
