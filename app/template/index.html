@@ -1,18 +1,120 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
-	</head>
-	<body>
-		<form name="input" method="post">
-			<label >Large Number:</label>
-			<input type="text" name="num" placeholder="Large Number">
-			<button type="submit">Check</button>
-		</form>
-		<div name="ouput">
-			{% if text %}
-			<h2>{{ text }}</h2>
-			{% endif %}
-		</div>
-	</body>
-</html>  
+<head>
+	<link rel="stylesheet" href="../static/stylesheets/style.css">
+	<script>
+		window.location.hash={% if text %}"#demo"{%else%}""{%endif%};
+	</script>
+	</script>
+	<!-- <meta http-equiv="refresh" content="3"> -->
+	<title>CryptoProject</title>
+</head>
+<body>
+	<main id="main-doc">
+
+		<!-- Navigation Start -->
+		<nav id="navbar">
+			<div class="nav-info">
+				<header>Crypto Project</header>
+				<div class="nav-head-card">
+					<img src="../static/imgs/tag.svg" />
+					<a href="#" class="link">Git Project Link</a>
+				</div>
+			</div>
+			<div class="nav-info">
+				<h3>Authors</h3>
+				<div class="nav-head-card">
+					<img src="../static/imgs/tag.svg" />
+					<a href="https://github.com/AlekhAvinash/" class="link">Alekh Avinash</a>
+				</div>
+				<div class="nav-head-card">
+					<img src="../static/imgs/tag.svg" />
+					<a href="https://github.com/Dvzlq" class="link">Aswin Harish</a>
+				</div>
+			</div>
+			<ul id="nav-list">
+				<li>
+					<a class="nav-link" href="#introduction">Introduction</a>
+				</li>
+				<li>
+					<a class="nav-link" href="#history">History</a>
+				</li>
+				<li>
+					<a class="nav-link" href="#algo">Algorithm</a>
+				</li>
+				<li>
+					<a class="nav-link" href="#demo">Demo</a>
+				</li>
+				<li>
+					<a class="nav-link" href="#refer">References</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- Navigation End -->
+		<!-- Main Start -->
+		<img class="responsive-image" src="../static/imgs/head.png" alt="logo" />
+		<section id="introduction" class="main-section">
+			<div class="sect-text">
+				<div class="sect-img">
+					<img src="../static/imgs/prime.png"/>
+				</div>
+				<article>
+					<header>Introduction</header>
+					<p>Primality Testing is a crucial part of cryptography. In principle primality testing is very simple. Yet for larger numbers primality testing becomes computationally impossible. So instead of using perfect primes, we rely on probablity to find almost perfect primes (psuedo-primes). One such algorithm is Rabin-Miller Primality Test.</p>
+					<p>To test the primality of a number n, one simply have to check if the n have any factors other than 1 & n. This is achieved by simply checking if any value &ltn is not divisible by n. But this is not feasible for large numbers (>32bits) since with each bit the number of values to be checked increases exponentially. Although there are many clever ways to reduce the number of elements to be checked, a bruteforce aproach will eventually become difficult after the 40-bit mark (for most traditional computers). Thus finding factors is computationally infeasible.</p>
+					<p>The Rabin-Miller Test is a quick & efficient way to test the primality of large numbers. It is an extension of Fermats Little Theorem that allows us to test for primality with a much higher probability than most other algorithms.</p>
+				</article>
+			</div>
+		</section>
+		<section id="history" class="main-section">
+			<div class="sect-text">
+				<div class="sect-img">
+					<img src="../static/imgs/rabin.jpg"/>
+				</div>
+				<article>
+					<header>History</header>
+					<p>During the mid-70s, due to the advancements in computational power, new and powerful public-private key crypto systems were on the rise. Many of these crypto systems (most popularly RSA) used large prime numbers and computationally difficult problems ( trap-door fuctions) as their basis.</p>
+					<p>This rise in standards introduced a problem of finding large primes and testing their primality. Out of the many solutions ones that stood out were Baillie–PSW, Solovay–Strassen and Rabin-Miller primality test. Miller-Rabin primality test was named, when Michael Rabin discovered a randomized polynomial-time algorithm in 1980 to test whether a number is prime, which was closely related to a deterministic algorithm studied by Gary Miller in 1976.</p>
+				</article>
+			</div>
+		</section>
+		<section id="algo" class="main-section">
+			<div class="sect-text">
+				<article>
+					<header>Algorithm</header>
+					<p class="highlight">Step a (optional): Check if n (value given for testing) is within a given database of prime numbers.<br>Step 1: Check if n has 2 as factor. <br>Step 2: Based of bit size of given element select k bases from aforementioned database. <br>Step 3: Express n as 2^r·d + 1.<br>Step 4: Select ith (initially 0) base and calculate x as (i^d)%n<br>Step 4: Check if x is 1 or n-1.<br> Step 5: For j times raise x by 2 and check if x in n-1.<br>Step 6: If either Step 4 or Step 5 failed, return "Not Prime" else continue with next i.<br>Step 7: Return as "Prime"</p>
+				</article>
+			</div>
+		</section>
+		<section id="demo" class="main-section">
+			<div class="sect-text">
+				<article>
+					<header>Demo</header>
+					<form name="input" method="post" autocomplete="off">
+						<input type="text" name="num" placeholder="Large Number">
+						<button type="submit">Check</button>
+					</form>
+					<div name="ouput">
+						{% if text %}
+						<p>{{ text }}</p>
+						{% endif %}
+					</div>
+				</article>
+			</div>
+		</section>
+		<section id="refer" class="main-section">
+			<div class="sect-text">
+				<article>
+					<header>References</header>
+					<p><a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test</a><br><a href="https://en.wikipedia.org/wiki/Michael_O._Rabin">https://en.wikipedia.org/wiki/Michael_O._Rabin</a>
+					</p>
+				</article>
+			</div>
+		</section>
+		<footer>
+			Built with passion Alekh Avinash & Aswin Harish
+		</footer>
+		<!-- Main End -->
+	</main>
+</body>
+</html>
