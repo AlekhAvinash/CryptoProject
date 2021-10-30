@@ -5,7 +5,7 @@ from pickle import load
 
 app = Flask(__name__, template_folder = 'template')
 
-PR = load(open('static/src/Primes', 'rb'))
+PR = load(open('app/static/src/Primes', 'rb'))
 mx = max(PR)
 
 def miller_rabin(n, k=100):
