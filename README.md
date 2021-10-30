@@ -5,7 +5,11 @@
 - [x] Setup Environment for Project Website.
 - [x] Create intuitive and explanantory page of the rabin miller prime check algo.
 - [ ] Add other popular methods of prime checking (eg. Fermat, Solvay-Strassen etc.)
-- [ ] Setup easy way to demo the project (maybe gitpod).
+- [x] Setup easy way to demo the project (maybe gitpod).
+
+### Instructions for visitor
+- To view the current website, [click me!](https://gitpod.io#github.com/AlekhAvinash/CryptoProject)
+
 ### Instructions for developer
 - Check if you have docker. 
 Use `docker --version`  and `docker-compose --version`. If there are no errors you can move on to step 2. Else check (error\not installed) [here](https://docs.docker.com/) for best resolution.
