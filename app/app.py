@@ -52,4 +52,5 @@ def home():
 			out = "Invalid Input!"
 	return render_template('index.html', text=out)
 
-app.run()
+if __name__ == '__main__':
+	app.run(host="localhost", port=6080)
