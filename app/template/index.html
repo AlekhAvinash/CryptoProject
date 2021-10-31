@@ -34,6 +34,9 @@
 			</div>
 			<ul id="nav-list">
 				<li>
+					<a class="nav-link" href="#demo">Demo</a>
+				</li>
+				<li>
 					<a class="nav-link" href="#introduction">Introduction</a>
 				</li>
 				<li>
@@ -43,7 +46,10 @@
 					<a class="nav-link" href="#algo">Algorithm</a>
 				</li>
 				<li>
-					<a class="nav-link" href="#demo">Demo</a>
+					<a class="nav-link" href="#conp">Key Concepts</a>
+				</li>
+				<li>
+					<a class="nav-link" href="#uses">Uses</a>
 				</li>
 				<li>
 					<a class="nav-link" href="#refer">References</a>
@@ -53,39 +59,6 @@
 		<!-- Navigation End -->
 		<!-- Main Start -->
 		<img class="responsive-image" src="../static/imgs/head.png" alt="logo" />
-		<section id="introduction" class="main-section">
-			<div class="sect-text">
-				<div class="sect-img">
-					<img src="../static/imgs/prime.png"/>
-				</div>
-				<article>
-					<header>Introduction</header>
-					<p>Primality Testing is a crucial part of cryptography. In principle primality testing is very simple. Yet for larger numbers primality testing becomes computationally impossible. So instead of using perfect primes, we rely on probablity to find almost perfect primes (psuedo-primes). One such algorithm is Rabin-Miller Primality Test.</p>
-					<p>To test the primality of a number n, one simply have to check if the n have any factors other than 1 & n. This is achieved by simply checking if any value &ltn is not divisible by n. But this is not feasible for large numbers (>32bits) since with each bit the number of values to be checked increases exponentially. Although there are many clever ways to reduce the number of elements to be checked, a bruteforce aproach will eventually become difficult after the 40-bit mark (for most traditional computers). Thus finding factors is computationally infeasible.</p>
-					<p>The Rabin-Miller Test is a quick & efficient way to test the primality of large numbers. It is an extension of Fermats Little Theorem that allows us to test for primality with a much higher probability than most other algorithms.</p>
-				</article>
-			</div>
-		</section>
-		<section id="history" class="main-section">
-			<div class="sect-text">
-				<div class="sect-img">
-					<img src="../static/imgs/rabin.jpg"/>
-				</div>
-				<article>
-					<header>History</header>
-					<p>During the mid-70s, due to the advancements in computational power, new and powerful public-private key crypto systems were on the rise. Many of these crypto systems (most popularly RSA) used large prime numbers and computationally difficult problems ( trap-door fuctions) as their basis.</p>
-					<p>This rise in standards introduced a problem of finding large primes and testing their primality. Out of the many solutions ones that stood out were Baillie–PSW, Solovay–Strassen and Rabin-Miller primality test. Miller-Rabin primality test was named, when Michael Rabin discovered a randomized polynomial-time algorithm in 1980 to test whether a number is prime, which was closely related to a deterministic algorithm studied by Gary Miller in 1976.</p>
-				</article>
-			</div>
-		</section>
-		<section id="algo" class="main-section">
-			<div class="sect-text">
-				<article>
-					<header>Algorithm</header>
-					<p class="highlight">Step a (optional): Check if n (value given for testing) is within a given database of prime numbers.<br>Step 1: Check if n has 2 as factor. <br>Step 2: Based of bit size of given element select k bases from aforementioned database. <br>Step 3: Express n as 2^r·d + 1.<br>Step 4: Select ith (initially 0) base and calculate x as (i^d)%n<br>Step 4: Check if x is 1 or n-1.<br> Step 5: For j times raise x by 2 and check if x in n-1.<br>Step 6: If either Step 4 or Step 5 failed, return "Not Prime" else continue with next i.<br>Step 7: Return as "Prime"</p>
-				</article>
-			</div>
-		</section>
 		<section id="demo" class="main-section">
 			<div class="sect-text">
 				<article>
@@ -102,11 +75,73 @@
 				</article>
 			</div>
 		</section>
+		<section id="introduction" class="main-section">
+			<div class="sect-text">
+				<div class="sect-img">
+					<img src="../static/imgs/prime.png"/>
+				</div>
+				<article>
+					<header>Introduction</header>
+					<p>Primality testing is a crucial part of cryptography. In principle, primality testing is very simple. Yet for larger numbers, primality testing becomes computationally impossible. So instead of using perfect primes, we rely on probability to find almost perfect primes (pseudo-primes). One such algorithm is the Miller-Rabin Primality Test.</p>
+					<p>To test the primality of a number n, one simply has to check if the n has any factors other than 1 & n. This is achieved by simply checking if any value (&ltn) is divisible by n. But this is not feasible for large numbers (>32 bits) since with each bit the number of values to be checked increases exponentially. Although there are many clever ways to reduce the number of elements to be checked, a brute force approach will eventually become difficult (~40-bit for most traditional computers). Thus finding factors is computationally infeasible.</p>
+					<p>The Rabin-Miller Test is a quick & efficient way to test the primality of large numbers. It is an extension of Fermat’s Little Theorem that allows us to test for primality with a much higher probability than most other algorithms.</p>
+				</article>
+			</div>
+		</section>
+		<section id="history" class="main-section">
+			<div class="sect-text">
+				<div class="sect-img">
+					<img src="../static/imgs/rabin.jpg"/>
+				</div>
+				<article>
+					<header>History</header>
+					<p>During the mid-70s, due to the advancements in computational power, new and powerful public-private key cryptosystems were on the rise. Many of these cryptosystems (most popularly RSA) used large prime numbers and computationally difficult problems (trap-door functions) as their basis.</p>
+					<p>This rise in standards introduced the problem of finding large primes and testing their primality. Out of the many solutions, the ones that stood out were Baillie–PSW, Solovay–Strassen, and Rabin-Miller primality test. The Miller-Rabin primality test was named when Michael Rabin discovered a randomized polynomial-time algorithm in 1980 to test whether a number is prime, which was closely related to a deterministic algorithm studied by Gary Miller in 1976.</p>
+				</article>
+			</div>
+		</section>
+		<section id="algo" class="main-section">
+			<div class="sect-text">
+				<article>
+					<header>Algorithm</header>
+					<p class="highlight">Step a (optional): Check if n (value given for testing) is within a given database of prime numbers.<br>Step 1: Check if n has 2 as factor. <br>Step 2: Based of bit size of given element select k bases from aforementioned database. <br>Step 3: Express n as 2^r·d + 1.<br>Step 4: Select ith (initially 0) base and calculate x as (i^d)%n<br>Step 4: Check if x is 1 or n-1.<br> Step 5: For j times raise x by 2 and check if x in n-1.<br>Step 6: If either Step 4 or Step 5 failed, return "Not Prime" else continue with next i.<br>Step 7: Return as "Prime"</p>
+				</article>
+			</div>
+		</section>
+		<section id="conp" class="main-section">
+			<div class="sect-text">
+				<article>
+					<header>Key Concepts</header>
+					<p class="highlight">Euler's theorem (also known as the Fermat–Euler theorem or Euler's totient theorem) states that, if n and a are coprime positive integers, and φ(n) is Euler's totient function, then a raised to the power φ(n) is congruent to 1 modulo n. -Wiki</p>
+					<div class="sect-img">
+						<img src="../static/imgs/eq1.png"/>
+						<img src="../static/imgs/eq2.png"/>
+					</div>
+					<p>The Rabin-Miller Primality Test is based on an interpretation of Euler’s theorem. To prove the concept we are using the direct proof method. First, we consider the modulo n as a prime p. This is done because if n was prime p then to calculate the totient of p can be calculated as p-1. According to Euler's theorem, any value between 1 and p-1 (aka basis) its power modulo p should return the value of one. </p>
+					<p>Here one thing to note is that although totient as power will always return 1 the converse need not be true only a possibility. For a base, there may be multiple values that could yield the value 1 other than the totient. But the probability can be increased by trying multiple bases & of varying degrees. So the Rabin-Miller Test essentially tests the given value p until it has a reasonably high probability of being a prime.</p>
+					<p>This test is also circumventing another problem of finding large primes. As mentioned, finding primes is a difficult problem to solve. But without finding primes one cannot prove that a number is a consonant. But this solution allows us to prove the existence of prime factors without solving the problem and thereby proving the value as a consonant or vice versa.</p>
+				</article>
+			</div>
+		</section>
+		<section id="uses" class="main-section">
+			<div class="sect-text">
+				<article>
+					<header>Uses & Weaknesses</header>
+					<p>Primality testing is widely used as a mathematical tool and as a part of the key generation in multiple Crypto Systems. Due to its fast nature, the test is also used in multiple cryptographic libraries and methods. Although the test is easy to implement, the choice of their bases should be strong and truly random. There are multiple methods to force pseudoprimes with known factors to be considered as primes. A good method is mentioned by F. Arnault.</p>
+				</article>
+			</div>
+		</section>
 		<section id="refer" class="main-section">
 			<div class="sect-text">
 				<article>
 					<header>References</header>
-					<p><a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test</a><br><a href="https://en.wikipedia.org/wiki/Michael_O._Rabin">https://en.wikipedia.org/wiki/Michael_O._Rabin</a>
+					<ul>
+						<li><a href="https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test">https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test</a></li>
+						<li>M. Rabin. Probabilistic algorithms for testing primality. J. Number Theory, 12:128–138, 1980.</li>
+						<li>Ore, Oystein (1988). "Euler's Factorization Method". Number Theory and Its History. pp. 59–64. ISBN 978-0-486-65620-5.</li>
+						<li>F. Arnault. Rabin-Miller primality test: Composite numbers which pass it. Mathematics of Computation, 64(209):355–361, Jan. 1995.</li>
+						
+					</ul>
 					</p>
 				</article>
 			</div>

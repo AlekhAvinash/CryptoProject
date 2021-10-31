@@ -8,7 +8,8 @@
 - [x] Setup easy way to demo the project (maybe gitpod).
 
 ### Instructions for visitor
-- To view the current website, [click me!](https://gitpod.io#github.com/AlekhAvinash/CryptoProject)
+- To view the current website, [click me](https://gitpod.io#github.com/AlekhAvinash/CryptoProject), **copy URL to new tab** for full view.
+![alt text](./app/static/imgs/web.png "Title")
 
 ### Instructions for developer
 - Check if you have docker. 
