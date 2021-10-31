@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, request
 from pickle import load
+from random import choice
 
 app = Flask(__name__, template_folder = 'template')
 
